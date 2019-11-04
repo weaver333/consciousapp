@@ -1,0 +1,33 @@
+{{> header }}
+<body>
+    
+	{{> admin-nav dashboard-nav=true }}
+	
+    <section class="main-wrapper">
+		<div class="bg-particles"> 
+            	<div class="d-flex grid-wrapper mb-md-5 mb-3">
+				<div class="stats-content small-container pt-4 pt-md-5">
+					<div class="grid-item">
+						<div class="white-box p-md-5">
+							<div class="top">
+								<h2 class='h1 mb-3'>All Offers</h2>
+                                <a href="offer" class="button ml-auto">New offer</a>
+							</div>
+							<div class="long-text">
+                                <table>
+                                {{#each offers}}
+                                    <tr>
+                                        <td>{{ this.name }}</td>
+                                        <td>{{ this.description }}</td>
+                                        <td><a href="offer/{{ this.name }}">Edit offer</a></td>
+                                    </tr>
+                                {{/each}}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+</html>

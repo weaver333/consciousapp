@@ -1,0 +1,100 @@
+
+.circular-chart {
+	display: block;
+	min-width: 100px;
+	height: 90px;
+	margin-right: 5px;
+	@include media-breakpoint-down(sm) {
+		min-width: 95px;
+		height: 80px;
+	}
+}
+
+.percentage-hold {
+	@include media-breakpoint-down(sm) {
+		width: 100%;
+		overflow: hidden;
+		overflow-x: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+}
+ 
+ .circle-bg {
+	fill: none;
+	stroke: black;
+	stroke-width: 5;
+ }
+ 
+ .circle {
+	fill: none;
+	stroke-width: 4;
+	stroke-linecap: round;
+	// animation: progress 1s ease-out forwards;
+ }
+ 
+//  @keyframes progress {
+// 	0% {
+// 	  stroke-dasharray: 0 100;
+// 	}
+//  }
+ .circular-chart.orange .circle {
+	stroke: white;
+ }
+ 
+ .percentage {
+	fill: white;
+	font-size: 0.45em;
+	text-anchor: middle;
+ }
+
+ .circlular-percentage {
+	display: flex;
+	padding-right: 25px;
+
+	@include media-breakpoint-down(sm) {
+		padding-right: 10px;
+		margin-left: -2px;
+	}
+
+	p {
+		white-space: nowrap;
+		font-size: 14px;
+		@include media-breakpoint-down(sm) {
+			font-size: 13px;
+			white-space: nowrap;
+		}
+	}
+	.icon {
+		font-size: 25px;
+	}
+	.icon-resize {
+		position: relative;
+		left: -6px;
+	}
+
+	&.-breath-consistency {
+		.icon {
+			color: $border-breath-consistency;
+		}
+		.circle-bg {
+			stroke: transparentize( $border-breath-consistency, .85 );
+		}
+		.circular-chart.orange .circle {
+			stroke: $border-breath-consistency;
+		}
+	}
+
+	&.-breath-depth {
+		.icon {
+			color: $border-breath-depth;
+		}
+		.circle-bg {
+			stroke: transparentize( $border-breath-depth, .85 );
+		}
+		.circular-chart.orange .circle {
+			stroke: $border-breath-depth;
+		}
+	}
+	
+	 
+}

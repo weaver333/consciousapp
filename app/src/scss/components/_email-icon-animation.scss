@@ -1,0 +1,33 @@
+.email-icon-animation {
+	svg {
+		width: 50px;
+		height: 50px;
+		margin: 0 auto 20px auto;
+		display: table;
+	}
+
+	.st0{
+		fill: transparentize( $primary, .4 );
+	}
+
+	.st1{
+		fill:#E6EBE0;
+	}
+
+	.st2{
+		fill:#CBCCCA;
+	}
+
+	.st3{
+		fill: $primary;
+	}
+
+	.st4{
+		fill: darken( $primary, 10% );
+	}
+	
+	#mail-icon {
+		width:120px;
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,147 @@
+@include font-face('Manrope', '../fonts/manrope/manrope-light', 300, null,otf woff woff2);
+@include font-face('Manrope', '../fonts/manrope/manrope-regular', 400, null,otf woff woff2);
+@include font-face('Manrope', '../fonts/manrope/manrope-bold', 600, null,otf woff woff2);
+
+body {
+	font-family: 'Manrope';
+	font-size: 16px;
+	font-weight: 400;
+	color: $t-black;
+}
+
+.heading {
+	font-size: 32px;
+	font-weight: 600;
+	color: black;
+	margin-bottom: 25px;
+}
+
+.bold {
+	font-weight: 600;
+}
+
+h1, .h1 {
+	font-size: 26px;
+}
+h2, .h2 {
+	font-size: 22px;
+	font-weight: 300;
+	line-height: 1.1;
+}
+
+h3, .h3 {
+	font-size: 19px;
+}
+
+h4, .h4 {
+	font-size: 19px;
+}
+.text {
+	h3 {
+		color: $t-black;
+		margin-top: 25px;
+		font-weight: 600;
+	}
+	p {
+		font-size: 15px;
+		letter-spacing: 0.5px;
+		line-height: 1.7;
+		margin: 15px 0;
+	}
+}
+.uc {
+	text-transform: uppercase;
+}
+.t-white {
+	color: white;
+}
+.t-black {
+	color: black;
+}
+.t-light-blue {
+	color: $t-light-blue;
+}
+.t-dark-green {
+	color: $t-dark-green;
+}
+.t-yellow {
+	color: $t-yellow;
+}
+.t-turquoise {
+	color: $t-turquoise;
+}
+.t-green {
+	color: $t-green;
+}
+.t-primary {
+	color: $t-primary;
+}
+.t-primary-light {
+	color: $primary-light;
+}
+
+.t-orange {
+	color: $t-orange;
+}
+
+.t-small {
+	font-size: 11px;
+}
+
+p {
+	line-height: 1.6;
+}
+
+.t-grey {
+	color: $t-grey;
+	p {
+		color: $t-grey;
+	}
+}
+
+.long-text {
+	h2 {
+		margin: 40px 0 15px 0;
+		font-weight: 400;
+	}
+	p {
+		font-size: 16px;
+		line-height: 1.7;
+	}
+}
+
+
+@media(max-width: 767px) {
+	.heading {
+		font-size: 28px;
+	}
+	h4 {
+		font-size: 24px;
+	}
+}
+
+
+.icon-border {
+	margin-left: auto;
+	font-size: 19px;
+	color: $primary-light;
+	background: rgba(0,0,0,0.4);
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 34px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&:before {
+		position: relative;
+		left: .5px;
+	}
+
+	img {
+		width: 22px;
+		height: 22px;
+	}
+}

@@ -1,0 +1,49 @@
+/* --- COLORS --- */
+$primary: #5025D4;
+$primary-light: #78D7FF;
+$light-grey: #FAF8FF;
+$green: #26D561;
+$pink: #FF1B74;
+
+// Text
+$t-primary: $primary;
+$t-primary-dark: #22045C;
+$t-light-blue: #9FA2F0;
+$t-black: #33274A;
+$t-dark-grey: rgb(75, 81, 97);
+$t-grey: #848484;
+$t-green: #A1FF58;
+$t-dark-green: #2AC940;
+$t-yellow: #FFBF00;
+$t-orange: #FF7337;
+$t-turquoise: #3DEEB4;
+
+// Dark theme
+$dark-bg-white-box: #1c122f;
+
+// Backgrounds
+$bg-dark-blue: #0f0b17;
+$bg-light-grey: #EFEFEF;
+$bg-grey-box: #F8F6FB;
+$bg-light-blue: #F0EDF7;
+$bg-light-blue-darker: #E3DDF7;
+$bg-black: #120F18;
+$bg-yellow: $t-yellow;
+$bg-primary-dark: $t-primary-dark;
+
+// Shadow
+$shadow-blue: #33E1FF;
+$shadow-dark-blue: rgba(9, 159, 255, .65);
+
+// Rest
+$dot-inactive: #39F;
+
+// Border
+$border-light-grey: rgba(63, 54, 94, .15);
+$border-breath-consistency: #D663FF;
+$border-breath-depth: $primary-light;
+$border-breathing-ring:	#dd7d99;
+$border-user-ring:	$primary-light;
+
+$desktop-nav-height: 100px;
+$mobile-nav-height: 60px;

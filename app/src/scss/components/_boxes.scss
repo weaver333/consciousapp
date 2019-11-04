@@ -1,0 +1,41 @@
+.boxes {
+	margin-left: -10px;
+	display: flex;
+
+	@include media-breakpoint-down(sm) {
+		width: 100%;
+		overflow: hidden;
+		overflow-x: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.box {
+		margin: 30px 10px;
+		min-width: 180px;
+		@include media-breakpoint-down(sm) {
+			margin: 15px 3px 5px 3px;
+			min-width: 200px;
+		}
+
+		.box-inner {
+			font-size: 13px;
+			padding: 15px 20px 15px 15px;
+			border-radius: 5px;
+			display: flex;
+			background: rgb(0,0,0);
+			background: linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 69%, rgba(40,40,40,0.3) 100%);
+			.box-icon {
+				margin-right: 10px;
+				font-size: 18px;
+			}
+			.box-description {
+				font-size: 16px;
+			}
+			@include media-breakpoint-down(sm) {
+				div {
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,108 @@
+<body>
+	<div class="subscribe-header d-flex justify-content-center">
+		<div class='nav-logo'>
+			<a href='/'><img src='/assets/images/LogoBlue.png' /></a>
+		</div>
+	</div>
+	
+	<section>
+		<div class="hero-slider" style="background-image: url(/assets/images/subscribe-bg.jpg)">
+			<div class="container pt-0 mx-auto">
+				<div class="slider-content">
+					<h2 class="slider-title">Get the best from <em>Conscious</em></h2>
+					<p>Take the first step on your journey towards a healthier, happier life. Learn to meditate with Conscious.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container mx-auto">
+			<div class="mt-2 mt-md-5 features-items">
+				<div class="col-md-3 feature-item">
+					<img src="/assets/images/pay-per-click.svg" />
+					<h3>Get points from your sessions</h3>
+					<p>By playing more sessions, you gain more coins and improve the world!</p>
+				</div>
+				<div class="col-md-3 feature-item">
+					<img src="/assets/images/protection.svg" />
+					<h3>Your privacy is safe with us</h3>
+					<p>Our scripts are loaded in the browser, so you don't need to worry about your privacy!</p>
+				</div>
+				<div class="col-md-3 feature-item">
+					<img src="/assets/images/worlwide.svg" />
+					<h3>Access your sessions wherever you go</h3>
+					<p>Your progress is saved on the cloud so you can continue even on your trip!</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="plans-wrapper">
+			<div class="container pt-0 mx-auto">
+				<form action="" method="post" id="cardForm">
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Test Card Info</label>
+						<div class="col-sm-7">
+							<div class="form-control-static">4242424242424242, 11/19, 123 - <a href="https://stripe.com/docs/testing">additional test info</a></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Card Number</label>
+						<div class="col-sm-4">
+							{{#if user.stripe.last4 }}
+								<input id="card-num" type="text" class="form-control" placeholder="XXXX XXXX XXXX {{user.stripe.last4}}">
+							{{else }}
+								<input id="card-num" type="text" class="form-control">
+							{{/if }}
+							
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Card Details</label>
+						<div class="col-sm-4">
+							<div class="row">
+								<div class="col-xs-4">
+									<input id="card-month" type="text" size="2" maxlength="2" class="form-control" placeholder="MM">
+								</div>
+								<div class="col-xs-4">
+									<input id="card-year"  type="text" size="2" maxlength="2" class="form-control" placeholder="YY">
+								</div>
+								<div class="col-xs-4">
+									<input id="card-cvc" type="text" size="3" maxlength="3" class="form-control" placeholder="CVC">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-4">
+							<button type="submit" class="btn btn-primary">Update Card</button>
+						</div>
+					</div>
+				</form>
+				{{#if status }}
+					{{message}}
+				{{/if }}
+			</div>
+		</div>
+
+		<div class="my-5">
+			<div class="container small-container mx-auto">
+				<h4 class="heading text-center">F.A.Q.</h4>
+				<div class="t-grey text mt-5">
+					<h3>Question 1</h3>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut odio vel leo blandit ornare. Quisque tristique rutrum orci et sodales. Pellentesque facilisis maximus luctus. Aenean condimentum leo eu venenatis iaculis. Nam quis sapien accumsan sapien rhoncus cursus. Praesent id porta ligula. Vivamus mollis mi eget ante pulvinar fermentum. Sed leo lorem, vulputate et lobortis rhoncus, scelerisque eu metus. Donec eu lacus tincidunt, sodales eros a, imperdiet odio. Nulla at consectetur orci. Maecenas semper sem laoreet, pretium velit scelerisque, commodo justo. Donec aliquam a nibh eu gravida. Vestibulum bibendum at arcu non accumsan.
+						Pellentesque scelerisque ut odio consequat pulvinar. Donec id felis a lacus commodo gravida. In quis nunc nec erat ultrices auctor. Aliquam dictum placerat justo id tincidunt. Quisque nec viverra massa. Morbi eleifend nisi quis massa scelerisque malesuada. Maecenas et semper lorem. Sed sed felis vel leo fringilla convallis quis at neque. Aenean ac accumsan felis, tristique rutrum leo. Duis porta vestibulum erat, non facilisis enim rutrum iaculis.
+					</p>
+
+					<h3>Question 2</h3>
+					<p>
+						Sed non sagittis lorem. Donec quis purus a odio gravida volutpat. Donec nec sagittis urna, ac volutpat libero. Pellentesque vel mollis libero. Aenean varius, turpis id iaculis tincidunt, est enim semper nisi, sed rhoncus lectus turpis vitae felis. Etiam eget nisl magna. Vivamus eget leo in justo gravida lobortis. Maecenas risus nunc, efficitur semper tellus gravida, faucibus condimentum arcu. Mauris magna mauris, aliquet et malesuada sed, iaculis et orci. Nunc augue lorem, tempus eget vehicula ut, mollis in ligula. Cras euismod, felis et consequat tempor, erat felis auctor metus, eget euismod eros mauris a diam. Nunc ultricies arcu varius dignissim tempor. Nam imperdiet odio eleifend, bibendum quam in, dictum metus. Morbi placerat malesuada metus, quis blandit mauris iaculis sollicitudin.
+						Suspendisse quis porttitor risus. Aliquam at scelerisque nibh. Suspendisse laoreet justo quam, a euismod orci molestie efficitur. Ut sit amet nibh et turpis eleifend sollicitudin vel non ligula. Nunc dapibus dictum mi at lobortis. Nullam in ipsum a enim aliquam commodo nec sit amet lorem. Ut luctus elementum ornare. Donec dictum turpis quis tincidunt porta. Aliquam erat volutpat. Aliquam ac sem libero. Pellentesque sit amet orci vitae mauris placerat sagittis. Aenean semper venenatis ligula, quis cursus purus venenatis id.
+						Nam ultricies nisi lacus, nec facilisis turpis pretium nec. Proin ut ante ornare felis aliquam sagittis eget a ipsum. Cras gravida est et metus sollicitudin, dignissim condimentum purus tempor. Vivamus ut nibh sodales, elementum augue non, bibendum dui. Phasellus ipsum ante, dapibus vel fermentum in, viverra sed elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In pellentesque quam est, ac laoreet quam consectetur vitae. Sed lacinia urna quis cursus ultricies. Mauris ac condimentum ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec laoreet lobortis volutpat. Suspendisse potenti. Integer eu odio turpis.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="/assets/js/billing.js"></script>
+</body>

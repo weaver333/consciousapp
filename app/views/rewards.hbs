@@ -1,0 +1,130 @@
+<body class='dashboard bg-light-grey'>
+	{{> nav dashboard-nav=true}}
+
+	<section class="main-wrapper">
+		<div id="map" class="bg-map"><div class='gradient-top'></div></div>
+		{{> profile-nav }}
+		<div class="container">
+			<div class="d-flex align-items-center">
+				{{> pulse-dot }}
+				<p>{{ totalMeditationApp }} meditating today</p>
+			</div>
+			<div class="boxes">
+				{{>
+					box
+					name=""
+					description="18,693"
+					descriptionPost=" coins"
+					icon="icon-clock"
+					iconColor="t-green"
+
+				}}
+				{{>
+					box
+					name=""
+					description='164'
+					descriptionPost=" philanthropy tokens"
+					icon="icon-fire"
+					iconColor="t-orange"
+				}}
+			</div>
+			<div class="grid-wrapper mb-md-5 mb-3">
+				<div class="small-container">
+					<div class="grid-item">
+						<div class="white-box">
+							<div class="top">
+								<img src='/assets/images/breath.png' class='icon-left' />
+								<div class="titles">
+									<h2>Biofeedback Meditation Sessions 😌</h2>
+									<p>
+										Feel amazing with our breath guide packs. Train yourself to
+										breath slower and deeper, whilst measuring your progress and
+										transforming your state of wellbeing!
+									</p>
+								</div>
+							</div>
+
+							<div class="pack-items">
+								{{!-- {{level}} --}}
+								{{#unless packs}}
+									<p>No packs yet!</p>
+								{{/unless}}
+								{{#each packs}}
+									{{> pack-item }}
+								{{/each}}
+							</div>
+						</div><!-- white box -->
+						<div class="white-box mt-5">
+							<div class="top">
+								<img src='/assets/images/icon-monitor.png' class='icon-left' />
+								<div class="titles">
+									<h3>Monitor mode</h3>
+									<p>
+										Working hard or hardly working? Either way, monitor your stress whilst you use your device, and get realtime biofeedback!
+									</p>
+								</div>
+							</div>
+
+							<div class="left-icon-boxes mt-5">Coming soon!</div>
+						</div><!-- white box -->
+						<div class="white-box mt-5">
+							<div class="top">
+								<img src='/assets/images/icon-build.png' class='icon-left' />
+								<div class="titles">
+									<h3>Build-your-own sessions</h3>
+									<p>
+										Freedom! Change the music, background, breathing patterns, or have no breathing guide and just use heart rate and stress analysis! The choice is yours.
+									</p>
+								</div>
+							</div>
+							<div class="left-icon-boxes mt-5">Coming soon!</div>
+						</div><!-- white box -->
+						<div class="white-box mt-5">
+							<div class="top">
+								<img src='/assets/images/icon-shop.png' class='icon-left' />
+								<div class="titles">
+									<h3>Rewards &amp; shop</h3>
+									<p>
+										The coins/xp you have earned from great sessions, and some of the rewards you can redeem with them!
+									</p>
+								</div>
+							</div>
+
+							<div class="left-icon-boxes mt-5">Coming soon!</div>
+						</div>
+						<div class="white-box mt-5">
+							<div class="top">
+								<img src='/assets/images/icon-back.png' class='icon-left' />
+								<div class="titles">
+									<h3>My previous sessions</h3>
+									<p>
+										See how you did in your previous sessions, with insightful
+										stats from the camera biofeedback!
+									</p>
+								</div>
+								<a href='/stats' class='button button-icon d-none d-md-block'>
+									<span class='icon icon-graph'></span>See all stats
+								</a>
+							</div>
+
+							<div class="left-icon-boxes mt-5">
+								{{#unless sessions}}
+									<p>No sessions yet!</p>
+								{{/unless}}
+								{{#each sessions}}
+									{{> sessions-left-icon-box }}
+								{{/each}}
+							</div>
+							<a href='/stats' class='button button-icon d-table d-md-none'>
+								<span class='icon icon-graph'></span>See all stats
+							</a>
+						</div><!-- white box -->
+					</div><!-- grid item -->
+				</div><!-- small container -->
+			</div><!-- grid wrapper -->
+		</div>
+	</section>
+
+	<script src='/assets/js/rewards.js'></script>
+
+</body>

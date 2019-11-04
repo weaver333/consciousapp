@@ -1,0 +1,108 @@
+.button {
+	background: $primary;
+	color: white;
+	padding: 15px 50px;
+	border: 0;
+	border-radius: 10px;
+	box-shadow: 0 2px 24px rgba(80,37,212,0.37);
+	font-weight: 400;
+	transition: all .3s;
+	font-size: 14px;
+	cursor: pointer;
+
+	&.button-md {
+		padding: 12px 30px;
+	}
+	&.button-sm {
+		padding: 8px 20px;
+		border-radius: 5px;
+	}
+
+	&.button-icon {
+		padding: 12px 30px;
+		padding-left: 15px;
+
+		.icon {
+			margin-right: 5px;
+			font-size: 18px;
+		}
+	}
+
+	&:hover {
+		background: $primary;
+		color: white;
+		text-decoration: none;
+		transform: scale(1.03);
+	}
+
+	&.button-red {
+		background: $red;
+		box-shadow: 0 2px 24px transparentize( $red, .4 );
+
+		&:hover {
+			background: $red;
+		}
+	}
+
+	&.button-green {
+		background: $green;
+		box-shadow: 0 2px 24px transparentize( $green, .4 );
+
+		&:hover {
+			background: $green;
+		}
+	}
+
+	&[disabled] {
+		background: rgb(161, 161, 161);
+		box-shadow: none;
+		
+		&:hover {
+			background: rgb(161, 161, 161);
+			transform: scale(1);
+		}
+	}
+	
+}
+
+.button-ghost {
+	padding: 20px 30px;
+	width: 280px;
+	max-width: 100%;
+	text-align: center;
+	border-radius: 20px;
+	border: 4px solid $primary-light;
+	box-shadow: inset 0 2px 15px $shadow-dark-blue,
+	0 2px 15px $shadow-dark-blue,
+	0 2px 64px rgba(71,150,255,0.3);
+	color: white;
+	transition: all .5s;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: none;
+		color: white;
+		box-shadow: inset 0 2px 25px $shadow-dark-blue,
+		0 2px 25px $shadow-dark-blue,
+		0 2px 64px rgba(71,150,255,0.4);
+	}
+
+	&.light {
+		box-shadow: inset 0 2px 12px $primary-light,
+		0 2px 15px $primary-light,
+		0 2px 64px rgba(71,150,255,0.3);
+	}
+
+	&.finish-session {
+		width: 200px;
+		margin-right: 2rem;
+		margin-left: 2rem;
+	}
+}
+
+.button-text {
+	text-transform: uppercase;
+	color: $primary;
+	font-weight: 600;
+	letter-spacing: .5px;
+}

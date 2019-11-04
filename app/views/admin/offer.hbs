@@ -1,0 +1,172 @@
+{{> header }}
+<body class='stats bg-light-grey'>
+	{{> admin-nav dashboard-nav=true }}
+
+	<section class="main-wrapper">
+		<div class="bg-particles"></div>
+		<div class="container">
+			{{#if offer }}
+			<div class="d-flex align-items-center m-0">
+				<h1>Edit "{{ offer.name }}" offer</h1>
+			</div>
+			<div class="d-flex grid-wrapper mb-md-5 mb-3">
+				<div class="stats-content small-container pt-4 pt-md-5">
+					<div class="grid-item">
+						<div class="white-box p-md-5">
+							<div class="long-text">
+								 <form method="post" action="" enctype="multipart/form-data">
+									<div class='form-group'>
+										<label for='name' class='form-label'>Offer Name</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="name" id="name" class="form-control" value="{{ offer.name }}">
+										</div>
+									</div>
+                           			<div class='form-group'>
+										<label for='description' class='form-label'>Description</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="description" id="description" class="form-control" value="{{ offer.description }}">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='terms' class='form-label'>Terms</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="terms" id="terms" class="form-control" value="{{ offer.terms }}">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='conditions' class='form-label'>Conditions</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="conditions" id="conditions" class="form-control" value="{{ offer.conditions }}">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='expiredAt' class='form-label'>Expired At</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="expiredAt" id="expiredAt" class="form-control" value="{{ offer.expiredAt }}">
+										</div>
+									</div>
+                           			<div class='form-group'>
+										<label for='name' class='form-label'>Offer Image</label>
+										<div class="mb-2 d-table">
+                                 			<img src="{{ offer.image }}" width='50'/>
+										</div>
+										<div class='input-group mb-2'>
+											<input type="file" class="form-control" name="image" id="image">	
+                              			</div>
+									</div>
+									<div class='form-group'>
+										<label for='expiredAt' class='form-label'>Cost</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="cost" id="cost" class="form-control" value="{{ offer.cost }}">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='expiredAt' class='form-label'>Voucher</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="voucher" id="voucher" class="form-control" value="{{ offer.voucher }}">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='name' class='form-label'>Offer Placement</label>
+										<div class="mb-2 d-table">
+                                 			<img src="{{ offer.placement }}" width='50'/>
+										</div>
+										<div class='input-group mb-2'>
+											<input type="file" class="form-control" name="placement" id="placement">	
+                              			</div>
+									</div>
+									<button type='submit' class='button button-sm button-green mr-3'>Update</button>
+									<button type='submit' class='button button-sm button-red' name='delete' value='true'>Delete</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{else }}
+			<div class="d-flex align-items-center m-0">
+				<h1>Add an offer</h1>
+			</div>
+			<div class="d-flex grid-wrapper mb-md-5 mb-3">
+				<div class="stats-content small-container pt-4 pt-md-5">
+					<div class="grid-item">
+						<div class="white-box p-md-5">
+							<div class="long-text">
+								 <form method="post" action="" enctype="multipart/form-data">
+									<div class='form-group'>
+										<label for='name' class='form-label'>Offer Name</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="name" id="name" class="form-control">
+										</div>
+									</div>
+                           			<div class='form-group'>
+										<label for='description' class='form-label'>Description</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="description" id="description" class="form-control">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='terms' class='form-label'>Terms</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="terms" id="terms" class="form-control">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='conditions' class='form-label'>Conditions</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="conditions" id="conditions" class="form-control">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='expiredAt' class='form-label'>Expired At</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="expiredAt" id="expiredAt" class="form-control">
+										</div>
+									</div>
+                           			<div class='form-group'>
+										<label for='image' class='form-label'>Image</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                            <input type="file" class="form-control" name="image" id="image">										
+                                        </div>
+									</div>
+									<div class='form-group'>
+										<label for='expiredAt' class='form-label'>Cost</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="cost" id="cost" class="form-control">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='expiredAt' class='form-label'>Voucher</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="voucher" id="voucher" class="form-control">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='placement' class='form-label'>Placement</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                            <input type="file" class="form-control" name="placement" id="placement">										
+                                        </div>
+									</div>
+                                    <button type='submit' class='button'>Add</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{/if }}
+		</div>
+	</section>
+</body>
+
+{{> footer }}

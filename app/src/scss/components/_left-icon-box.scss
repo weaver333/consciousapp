@@ -1,0 +1,164 @@
+#handlebars-stats .left-icon-box {
+	height: 100%;
+}
+
+.left-icon-box {
+	display: flex;
+	width: 100%;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 15px;
+	transition: background .3s;
+
+	&.dark {
+		background: rgba(0, 0, 0, .2);
+	}
+
+	@include media-breakpoint-down(sm) {
+		flex-direction: column;
+	}
+
+	&.xs-fullwidth {
+		width: 100%;
+
+		@include media-breakpoint-up(md) {
+			width: auto
+		}
+	}
+}
+
+.left-icon {
+	@include gradient(rgba(31, 2, 119, .85), rgba(51, 0, 206, .85));
+	border-bottom-left-radius: 15px;
+	border-top-left-radius: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 54px;
+
+	@include media-breakpoint-down(md) {
+		width: 100%;
+		border-radius: 0;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		height: 50px;
+	}
+
+	.icon-border {
+		margin: 0;
+		background: rgba(0, 0, 0, 0.2);
+	}
+
+	&.bg-green {
+		background: $green;
+	}
+
+	&.bg-yellow {
+		background: $bg-yellow;
+	}
+
+	&.big {
+		@include media-breakpoint-up(md) {
+			width: 70px;
+		}
+	}
+}
+
+.columns {
+	border: 1px solid $border-light-grey;
+	border-left: none;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 0 25px;
+
+	@include media-breakpoint-down(sm) {
+		flex-direction: column;
+		text-align: center;
+		border: 0;
+		padding: 10px 0;
+	}
+
+	p,
+	a {
+		font-weight: 400;
+	}
+
+	p {
+		font-size: 14px;
+	}
+}
+
+.first-column {
+	padding: 16px 0;
+	width: 36%;
+
+	.session-type {
+		font-weight: 400;
+	}
+
+	.session-timestamp {
+		font-size: 13px;
+		font-weight: 400;
+		opacity: .75;
+	}
+}
+
+.second-column {
+	.icon {
+		font-size: 17px;
+		margin-right: 5px;
+	}
+}
+
+.third-column {
+	margin-left: 25px;
+
+	.stats-percentage {
+		border-radius: 25px;
+		padding: 2px 5px;
+		font-size: 12px;
+		text-align: center;
+
+		&:nth-child(1) {
+			margin-bottom: 8px;
+		}
+
+		&.stats-red {
+			background: #ffa3a3;
+		}
+
+		&.stats-yellow {
+			background: #F7EF46;
+		}
+
+		&.stats-green {
+			background: #B3E1A0;
+		}
+	}
+}
+
+.see-more {
+	margin-left: auto;
+
+	@include media-breakpoint-down(sm) {
+		margin: 15px 0;
+	}
+
+	a {
+		color: $primary;
+		font-size: 14px;
+	}
+
+	span {
+		margin-left: 15px;
+		color: $primary;
+	}
+}
+
+body.dark-theme {
+	.left-icon-box {
+		background: $bg-dark-blue;
+	}
+}

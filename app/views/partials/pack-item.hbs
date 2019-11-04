@@ -1,0 +1,17 @@
+<a href='/session?pack={{name}}' class="pack-item" style='background-image: url({{imageUrl}})'>
+	<div 
+		class="overlay" 
+		style='background: linear-gradient(0deg, {{backgroundGradientTopColor}} 0%,
+		{{backgroundGradientBottomColor}} 100%)'
+	></div>
+	<p class='pack-description'>{{description}}</p>
+	{{!-- {{#unless unlocked}}
+		<div class="pack-unlock-button">
+			<div class='button-ghost light'><span class='icon-unlock icon'></span><span>unlock</span></div>
+		</div>
+	{{/unless}} --}}
+	<div class="box-footer">
+		<p>{{name}}</p>
+		<span class="icon icon-border"><img src='{{icon}}' /></span>
+	</div>
+</a>

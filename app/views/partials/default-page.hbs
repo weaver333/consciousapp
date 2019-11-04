@@ -1,0 +1,40 @@
+{{> header }}
+<body class='stats bg-light-grey'>
+	{{#if activeNavUser}}
+		{{> nav user-nav=true }}
+	{{else}}
+		{{> nav}}
+	{{/if}}
+
+	<section class="main-wrapper">
+		<div class="bg-particles"></div>
+		<div class="container">
+			<div class="d-flex align-items-center m-0">
+				<h1>
+					{{#if title}}
+						{{title}}
+					{{else}}
+						Default Page
+					{{/if}}
+				</h1>
+			</div>
+			
+			<div class="d-flex grid-wrapper mb-md-5 mb-3">
+				<div class="stats-content small-container pt-4 pt-md-5">
+					<div class="grid-item">
+						<div class="white-box p-md-5">
+							<div class="top">
+								<h2 class='h1 mb-3'>{{h2Text}}</h2>
+							</div>
+							<div class="long-text">
+								{{{body}}}
+							</div>
+						</div><!-- white box -->
+					</div><!-- grid item -->
+				</div><!-- small container -->
+			</div><!-- grid wrapper-->
+		</div>
+	</section>
+</body>
+
+{{> footer }}

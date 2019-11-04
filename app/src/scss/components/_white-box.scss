@@ -1,0 +1,127 @@
+.white-box {
+	background: white;
+	border-radius: 20px;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, .05);
+	color: $t-primary-dark;
+	padding: 25px;
+	max-width: 100%;
+	transition: background .3s, color .3s;
+
+	@include media-breakpoint-down(sm) {
+		padding: 22px 20px;
+	}
+
+	.top {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		@include media-breakpoint-down(md) {
+			align-items: initial;
+		}
+
+		.titles {
+			display: flex;
+			flex-direction: column;
+			max-width: 75%;
+			flex: 1;
+			h2 {
+				@include media-breakpoint-down(sm) {
+					font-size: 1rem;
+					line-height: 1.25rem;
+				}
+			}
+		}
+		.icon-left {
+			width: 38px;
+			height: 38px;
+			margin-right: 15px;
+			align-self: flex-start;
+
+
+			&.icon-small {
+				width: 25px;
+				margin-right: 8px;
+				margin-left: 16px;
+				font-size: 22px;
+				line-height: 22px;
+			}
+		}
+		.button-icon {
+			margin-left: auto;
+		}
+
+		p {
+			color: transparentize($t-primary-dark, .55);
+			font-size: 14px;
+			font-weight: 400;
+			transition: color .3s;
+			@include media-breakpoint-down(sm) {
+				display: none;
+			}
+		}
+	}
+
+	.button-icon {
+		@include media-breakpoint-down(sm) {
+			display: table;
+			margin: 40px auto 15px auto;
+		}
+	}
+
+	&.white-box-overflow {
+		position: relative;
+		margin-top: 150px;
+		margin-bottom: 120px;
+		padding-left: 200px;
+
+		@include media-breakpoint-down(md) {
+			margin: 0;
+			margin-top: 60px;
+			padding-left: 20px;
+		}
+		.pack-item {
+			margin: 0;
+			position: absolute;
+			top: -50%;
+			left: 30px;
+
+			@include media-breakpoint-down(md) {
+				position: relative;
+				top: 0;
+				left: 0;
+				min-width: 100%;
+				margin-top: 20px;
+			}
+
+			&:hover {
+				transform: scale(1.05);
+				box-shadow: 0 0 25px rgba(0, 0, 0, .20);
+			}
+		}
+	}
+	&.dark {
+		background: rgba(0, 0, 0, .5);
+
+		.top {
+			.titles,
+			p {
+				color: white;
+			}
+		} 
+	}
+}
+
+body.dark-theme {
+	.white-box {
+		background: $dark-bg-white-box;
+		color: white;
+
+		.top {
+
+			p {
+				color: white;
+			}
+		}
+	}
+}

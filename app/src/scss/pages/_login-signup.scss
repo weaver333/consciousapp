@@ -1,0 +1,128 @@
+.auth-logo {
+	max-width: 200px;
+}
+.login-screen {
+	padding-top: 85px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	@include media-breakpoint-down(sm) {
+		padding: 45px 15px 0 15px;
+	}
+	.guideRing {
+		overflow: hidden;
+	}
+}
+.box-form {
+	margin-top: 65px; 
+	border-radius: 10px;
+	background: white;
+	min-width: 400px;
+	max-width: 400px;
+	box-shadow: 0 7px 10px rgba(0,0,0,0.1);
+
+	@include media-breakpoint-down(sm) {
+		width: 100%;
+		min-width: auto;
+		margin-top: 35px;
+	}
+
+	form {
+		width: 265px;
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
+	}
+	
+	.inner {
+		padding: 54px 67px;
+		transition: height .5s;
+		@include media-breakpoint-down(sm) {
+			padding: 45px 20px;
+		}
+	}
+
+	.footer {
+		padding: 18px 15px;
+		background: $bg-light-blue-darker;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.button {
+			margin-left: 30px;
+		}
+	}
+}
+.footer-menu {
+	list-style: none;
+	padding: 0;
+	margin-top: 100px;
+	li {
+		display: inline-block;
+		a {
+			font-size: 14px;
+			font-weight: 300;
+			margin: 0 15px;
+			color: white;
+		}
+	}
+}
+
+.copyright {
+	font-size: 12px;
+	color: white;
+	opacity: .7;
+}
+
+.login-steps {
+	padding: 0 15px;
+	width: 450px;
+	margin-top: 2%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@include media-breakpoint-down(sm) {
+		width: 100%;
+	}
+
+	p {
+		width: 310px;
+	}
+	img {
+		width: 258px;
+		height: 258px;
+		margin-bottom: 10px;
+	}
+	.small-icon {
+		width: 29px;
+		height: auto;
+	}
+
+	.steps-title {
+		margin-bottom: 28px;
+	}
+
+	.carousel-cell {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		color: white;
+	}
+
+	.button-ghost {
+		margin-top: 20px;
+		display: inline-block;
+	}
+
+	.skip-link {
+		font-size: 14px;
+		font-weight: 300;
+		margin-top: 20px;
+	}
+}

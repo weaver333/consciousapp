@@ -1,0 +1,25 @@
+.dashboard {
+	background: $light-grey;
+	transition: background .3s;
+
+	.boxes {
+		margin-bottom: 85px;
+		margin-top: 50px;
+
+		@include media-breakpoint-down(sm) {
+			margin-top: 30px;
+			margin-bottom: 50px;
+			display: block;
+		}
+	}
+}
+
+
+.install-app-btn {
+	margin-left: 1rem;
+	@include media-breakpoint-down(sm) {
+		display: none;
+	}
+}
+
+.mapboxgl-ctrl-top-right {display: none !important;}

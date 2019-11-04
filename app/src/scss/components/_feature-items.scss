@@ -1,0 +1,42 @@
+.features-items {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-left: -20px;
+	margin-right: -20px;
+
+	@include media-breakpoint-down(md) {
+		flex-direction: column;
+		margin-left: -15px;
+		margin-right: 0;
+	}
+}
+.feature-item {
+	width: 33%;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+
+	@include media-breakpoint-down(md) {
+		width: 100%;
+		margin: 20px 0;
+	}
+
+	h3 {
+		font-size: 21px;
+		font-weight: 600;
+		margin-top: 35px;
+		margin-bottom: 15px;
+		color: $t-black;
+	}
+
+	p {
+		color: $t-grey;
+		font-size: 15px;
+		letter-spacing: 0.5px;
+	}
+	
+	img {
+		max-width: 120px;
+	}
+}

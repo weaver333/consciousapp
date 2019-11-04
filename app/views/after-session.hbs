@@ -1,0 +1,57 @@
+<body class='session bg-particles'>
+	{{> nav nav-dark=true}}
+
+	<div class='d-flex justify-content-center align-items-center mt-5 flex-column'>
+		<h1 class='t-white px-3 text-center'>Congratulations on your calming session! Here's how you did...</h1>
+
+		<div class="d-flex flex-column flex-md-row container pr-3 pr-md-0">
+			<div class="d-flex percentage-hold flex-column mt-3 mb-5 mr-0 mt-md-5 mr-md-5 mb-md-0">
+				<div class="circlular-percentage -breath-consistency">
+					<svg viewBox="0 0 40 40" class="circular-chart orange">
+						<path class="circle-bg" d="M20 2.8
+									a 15.9155 15.9155 0 0 1 0 31.831
+									a 15.9155 15.9155 0 0 1 0 -31.831" />
+						<path class="circle" stroke-dasharray="{{ session.guideAccuracyAvg }}, 100" d="M20 2.8
+									a 15.9155 15.9155 0 0 1 0 31.831
+									a 15.9155 15.9155 0 0 1 0 -31.831" />
+						<text x="20" y="21" class="percentage">{{ session.guideAccuracyAvg }}%</text>
+					</svg>
+					<div>
+						<span class='icon icon-waves'></span>
+						<p class='t-white'>Guide accuracy</p>
+					</div>
+				</div>
+				<div class="circlular-percentage -breath-depth mt-4">
+					<svg viewBox="0 0 40 40" class="circular-chart orange">
+						<path class="circle-bg" d="M20 2.8
+									a 15.9155 15.9155 0 0 1 0 31.831
+									a 15.9155 15.9155 0 0 1 0 -31.831" />
+						<path class="circle" stroke-dasharray="{{ session.topOfBreathAvg }}, 100" d="M20 2.8
+									a 15.9155 15.9155 0 0 1 0 31.831
+									a 15.9155 15.9155 0 0 1 0 -31.831" />
+						<text x="20" y="21" class="percentage">{{ session.topOfBreathAvg }}%</text>
+					</svg>
+					<div>
+						<span class='icon icon-resize'></span>
+						<p class='t-white'>Breath Depth</p>
+					</div>
+				</div>
+			</div>{{! percentage hold }}
+			<div class="white-box dark w-100">
+				<div class="top">
+					<img src='/assets/images/stats-icon.png' class='icon-left' />
+					<div class="titles">
+						<h3>Your stats over time</h3>
+						<p>
+							See how you did in your session over time
+						</p>
+					</div>
+				</div>
+				{{> chart }}
+			</div><!-- white box -->
+		</div> {{! flex container }}
+
+		<a href="/dashboard" class='button-ghost mt-5'>Finish</a>
+
+		<script src="/assets/js/after-session.js" type="text/javascript"></script>
+</body>

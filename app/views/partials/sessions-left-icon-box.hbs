@@ -1,0 +1,39 @@
+<div class="left-icon-box mt-3">
+	<div class="left-icon" style="background: linear-gradient(0, {{pack.backgroundGradientTopColor}} 0%, {{pack.backgroundGradientBottomColor}} 100%)">
+		<span class='icon-border'><img src="{{ pack.icon }}"/></span>
+	</div>
+	<div class="columns">
+		<div class="first-column">
+			<p class='session-type'>{{ packType }}</p>
+			<p class='session-timestamp'>
+				<span class="t-dark-green total-session-time" data-total-session-time={{ totalSessionTime }} ></span> 
+				<span class="t-primary session-date-day"></span>
+				at <span class="t-primary timestamp" data-timestamp={{ timestamp }}></span>
+			</p>
+		</div>
+		<div class='d-flex align-items-center'>
+			<div class="second-column">
+				<p><span class="icon icon-waves t-primary"></span> Guide accuracy</p>
+				<p><span class="icon icon-resize t-primary-light"></span> Breath Depth</p>
+			</div>
+			<div class="third-column">
+				<div 
+					class="stats-percentage guide-percentage" 
+					data-percentage='{{ guideAccuracyAvg }}'
+				>
+					{{ guideAccuracyAvg }}%
+				</div>
+				<div 
+					class="stats-percentage tob-percentage" 
+					data-percentage='{{ topOfBreathAvg }}'
+				>
+					{{ topOfBreathAvg }}%
+				</div>
+			</div>
+		</div>
+		<div class="see-more">
+			<a href="/session-stats/{{ _id }}">See session stats</a>
+			<span class='icon-arrow-right'></span>
+		</div>
+	</div>
+</div>

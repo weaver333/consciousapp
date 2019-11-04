@@ -1,0 +1,324 @@
+{{> header }}
+<body class='stats bg-light-grey'>
+	{{> admin-nav dashboard-nav=true }}
+
+	<section class="main-wrapper">
+		<div class="bg-particles"></div>
+		<div class="container">
+			{{#if pack }}
+			<div class="d-flex align-items-center m-0">
+				<h1>Edit "{{ pack.name }}" pack</h1>
+			</div>
+			<div class="d-flex grid-wrapper mb-md-5 mb-3">
+				<div class="stats-content small-container pt-4 pt-md-5">
+					<div class="grid-item">
+						<div class="white-box p-md-5">
+							{{!-- <div class="top">
+								<h2 class='h1 mb-3'>Edit {{ pack.name }} pack</h2>
+							</div> --}}
+							<div class="long-text">
+								 <form method="post" action="" enctype="multipart/form-data">
+									<div class='form-group'>
+										<label for='name' class='form-label'>Pack Name</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="name" id="name" class="form-control" value="{{ pack.name }}">
+										</div>
+									</div>
+                           <div class='form-group'>
+										<label for='name' class='form-label'>Description</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="description" id="description" class="form-control" value="{{ pack.description }}">
+										</div>
+									</div>
+                           <div class='form-group'>
+										<label for='name' class='form-label'>Pack Preview Image</label>
+										<div class="mb-2 d-table">
+                                 <img src="{{ pack.imageUrl }}" width='50'/>
+										</div>
+										<div class='input-group mb-2'>
+											<input type="file" class="form-control" name="imageUrl" id="imageUrl">	
+                              </div>
+									</div>
+                           <div class='form-group'>
+										<label for='name' class='form-label'>Background Gradient Top Color</label>
+										<div class='input-group mb-2'>
+											<input type="text" class="form-control" name="backgroundGradientTopColor" id="backgroundGradientTopColor" value="{{ pack.backgroundGradientTopColor }}">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='name' class='form-label'>Background Gradient bottom Color</label>
+										<div class='input-group mb-2'>
+											<input type="text" class="form-control" name="backgroundGradientBottomColor" id="backgroundGradientBottomColor" value="{{ pack.backgroundGradientBottomColor }}">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='name' class='form-label'>Pack Icon</label>
+										<div class="bg-primary-dark p-2 mb-2 d-table">
+											<img src="{{ pack.icon }}" width='25'/>
+										</div>
+										<div class='input-group mb-2'>
+											<input type="file" name="icon" id="icon" class="form-control">
+											
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='name' class='form-label'>Link</label>
+										<div class='input-group mb-2'>
+											<input type="text" name="link" id="link" class="form-control" value="{{ pack.link }}">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='name' class='form-label'>Session Background</label>
+										<div class="mb-2 d-table">
+											<img src="{{ pack.sessionBackground }}" width='150'/>
+										</div>
+										<div class='input-group mb-2'>
+											<input type="file" name="sessionBackground" id="sessionBackground" class="form-control" value="{{ pack.sessionBackground }}">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='name' class='form-label'>Pack soundtrack</label>
+										<div class="mb-2 d-table">
+											<audio controls>
+												<source src="{{ pack.audio }}">
+											</audio>
+										</div>
+										<div class='input-group mb-2'>
+											<input type="file" name="audio" id="audio" class="form-control">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='name' class='form-label'>Inahale Duration</label>
+										<div class='input-group mb-2'>
+											<input class="form-control" type="text" name="inHale" id="inHale" value="{{ pack.breathPattern.inHale }}">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='name' class='form-label'>Hold Duration (after inhale)</label>
+										<div class='input-group mb-2'>
+											<input class="form-control" type="text" name="holdIn" id="holdIn" value="{{ pack.breathPattern.holdIn }}">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='name' class='form-label'>Exhale Duration</label>
+										<div class='input-group mb-2'>
+											<input class="form-control" type="text" name="exHale" id="exHale" value="{{ pack.breathPattern.exHale }}">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='name' class='form-label'>Hold Duration (after exhale)</label>
+										<div class='input-group mb-2'>
+											<input class="form-control" type="text" name="holdEx" id="holdEx" value="{{ pack.breathPattern.holdEx }}">
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='archived' class='form-label'>Is archived?</label>
+										<div class='input-group mb-2'>
+											<input class="form-control" type="checkbox" name="archived" id="archived" {{checked pack.archived}}>
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='name' class='form-label'>Required Level, 0: Free, 1: Premium, 2: Pro</label>
+										<div class='input-group mb-2'>
+											<input class="form-control" type="text" name="requiredLevel" id="requiredLevel" value="{{ pack.requiredLevel }}">
+										</div>
+									</div>
+									<button type='submit' class='button button-sm button-green mr-3'>Update</button>
+									<button type='submit' class='button button-sm button-red' name='delete' value='true'>Delete</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{else }}
+			<div class="d-flex align-items-center m-0">
+				<h1>Add a pack</h1>
+			</div>
+			<div class="d-flex grid-wrapper mb-md-5 mb-3">
+				<div class="stats-content small-container pt-4 pt-md-5">
+					<div class="grid-item">
+						<div class="white-box p-md-5">
+							{{!-- <div class="top">
+								<h2 class='h1 mb-3'>Add a pack</h2>
+							</div> --}}
+							<div class="long-text">
+								 <form method="post" action="" enctype="multipart/form-data">
+									<div class='form-group'>
+										<label for='name' class='form-label'>Pack Name</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                            <input type="text" name="name" id="name" class="form-control">
+										</div>
+									</div>
+                                    <div class='form-group'>
+										<label for='name' class='form-label'>Description</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                             <input type="text" name="description" id="description" class="form-control">
+										</div>
+									</div>
+                                    <div class='form-group'>
+										<label for='name' class='form-label'>Pack Preview Image</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                            <input type="file" class="form-control" name="imageUrl" id="imageUrl">										
+                                        </div>
+									</div>
+                                    <div class='form-group'>
+										<label for='name' class='form-label'>Background Gradient Top Color</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                             <input type="text" class="form-control" name="backgroundGradientTopColor" id="backgroundGradientTopColor">
+                                        </div>
+									</div>
+                                    <div class='form-group'>
+										<label for='name' class='form-label'>Background Gradient bottom Color</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                             <input type="text" class="form-control" name="backgroundGradientBottomColor" id="backgroundGradientBottomColor">
+                                        </div>
+									</div>
+                                    <div class='form-group'>
+										<label for='name' class='form-label'>Pack Icon</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                             <input type="file" name="icon" id="icon" class="form-control">
+                                        </div>
+									</div>
+                                    <div class='form-group'>
+										<label for='name' class='form-label'>Link</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                            <input type="text" name="link" id="link" class="form-control">
+                                        </div>
+									</div>
+                                    <div class='form-group'>
+										<label for='name' class='form-label'>Session Background</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                            <input type="file" name="sessionBackground" id="sessionBackground" class="form-control">
+                                        </div>
+									</div>
+                                    <div class='form-group'>
+										<label for='name' class='form-label'>Pack soundtrack</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                             <input type="file" name="audio" id="audio" class="form-control">
+                                        </div>
+									</div>
+                                    <div class='form-group'>
+										<label for='name' class='form-label'>Inahale Duration</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                            <input class="form-control" type="text" name="inHale" id="inHale">
+                                        </div>
+									</div>
+                                    <div class='form-group'>
+										<label for='name' class='form-label'>Hold Duration (after inhale)</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                            <input class="form-control" type="text" name="holdIn" id="holdIn">
+                                        </div>
+									</div>
+                                    <div class='form-group'>
+										<label for='name' class='form-label'>Exhale Duration</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                            <input class="form-control" type="text" name="exHale" id="exHale">
+                                        </div>
+									</div>
+                                    <div class='form-group'>
+										<label for='name' class='form-label'>Hold Duration (after exhale)</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                                <input class="form-control" type="text" name="holdEx" id="holdEx">
+                                        </div>
+									</div>
+									<div class='form-group'>
+										<label for='archived' class='form-label'>Is archived?</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                                <input class="form-control" type="checkbox" name="archived" id="archived">
+                                        </div>
+									</div>
+									<div class='form-group'>
+										<label for='name' class='form-label'>Required Level, 0: Free, 1: Premium, 2: Pro</label>
+										<div class='input-group mb-2'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+                                                <input class="form-control" type="text" name="requiredLevel" id="requiredLevel">
+                                        </div>
+									</div>
+                                    <button type='submit' class='button'>Add</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{/if }}
+		</div>
+	</section>
+</body>
+
+{{> footer }}

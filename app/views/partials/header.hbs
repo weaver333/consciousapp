@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Conscious Breath</title>
+		<meta name="mobile-web-app-capable" content="yes">
+		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#0D021E">
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#0D021E">
+		<!-- iOS Safari -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="#0D021E">
+		<link rel="icon" sizes="192x192" href="/assets/images/favicon/android-chrome-192x192.png">
+		<link rel="icon" sizes="512x512" href="/assets/images/android-chrome-512x512.png">
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='https://api.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet' />
+		<link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.2.0/handlebars.min.js'></script>
+		<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+		<script type="text/javascript">
+				// This is the service worker with the Advanced caching
+
+		// Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+
+		// Check compatibility for the browser we're running this in
+		if ("serviceWorker" in navigator) {
+		if (navigator.serviceWorker.controller) {
+			console.log("Active service worker found, no need to register");
+		} else {
+			// Register the service worker
+			navigator.serviceWorker
+			.register("conscious-serviceworker.js", {
+				scope: "./"
+			})
+			.then(function (reg) {
+				console.log("Service worker has been registered for scope: " + reg.scope);
+			});
+		}
+		}
+		</script>
+		<script type="text/javascript">
+			Stripe.setPublishableKey('{{stripePubKey}}');
+		</script>
+		<script>
+			(function(h,o,t,j,a,r){
+				h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+				h._hjSettings={hjid:1518990,hjsv:6};
+				a=o.getElementsByTagName('head')[0];
+				r=o.createElement('script');r.async=1;
+				r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+				a.appendChild(r);
+			})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+	</head>

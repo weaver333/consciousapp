@@ -1,0 +1,55 @@
+{{> 
+	offer-box 
+	packName="Energise your body and mind"
+	packType="energy"
+	packIcon="icon-energy"
+	backgroundGradientTop="rgba(73,51,255,1)"
+	backgroundGradientBottom="rgba(141,51,255,1)"
+	link="/session"
+	imgUrl="/assets/images/blake.png"
+	unlocked=true
+}}
+{{> 
+	offer-box 
+	packName="Relieve worries and feel free"
+	packType="anxiety"
+	packIcon="icon-anxiety"
+	backgroundGradientTop="#1F0277"
+	backgroundGradientBottom="#3300CE"
+	link="/subscribe"
+	imgUrl="/assets/images/anxiety.png"
+	unlocked=false
+}}
+{{> 
+	offer-box 
+	packName="Improve your sleep"
+	packType="insomnia"
+	packIcon="icon-insomnia"
+	backgroundGradientTop="#00756B"
+	backgroundGradientBottom="#19CCEC"
+	link="/subscribe"
+	imgUrl="/assets/images/insomnia.png"
+	unlocked=false
+}}
+{{> 
+	offer-box 
+	packName="Release stress and just let go"
+	packType="stress"
+	packIcon="icon-stress"
+	backgroundGradientTop="#3A0075"
+	backgroundGradientBottom="#E83AA8"
+	link="/subscribe"
+	imgUrl="/assets/images/stress.png"
+	unlocked=false
+}}
+{{> 
+	offer-box 
+	packName="Untangle anger and unlock forgiveness"
+	packType="anger"
+	packIcon="icon-anger"
+	backgroundGradientTop="#75003F"
+	backgroundGradientBottom="#EC5219"
+	link="/subscribe"
+	imgUrl="/assets/images/anger.png"
+	unlocked=false
+}}

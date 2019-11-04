@@ -1,0 +1,9 @@
+node_modules
+package-lock.json
+
+# Ignore all page specific views as they are generated different on production
+# public/assets/js/auth.js
+# public/assets/js/welcome.js
+# public/assets/js/stats.js
+# public/assets/js/session.js
+# public/assets/js/dashboard.js

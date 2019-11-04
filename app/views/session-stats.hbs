@@ -1,0 +1,133 @@
+<body class='stats'>
+	{{> nav stats-nav=true}}
+	<input type='hidden' id='_sessionPackType' value='{{ session.packType }}' />
+	<input type='hidden' id='_sessionDuration' value='{{ session.totalSessionTime }}' />
+	<input type='hidden' id='_sessionTimestamp' value='{{ session.timestamp }}' />
+	<input type='hidden' id='sessionBrPM' value='{{ session.breathsPerMin }}' />
+	<input type='hidden' class='guideBreathsPerMin' value='{{ session.pack.guideBreathsPerMin }}' />
+	<input type='hidden' class='breathPatternInhale' value='{{ session.pack.breathPattern.inHale }}' />
+	<input type='hidden' class='breathPatternHoldIn' value='{{ session.pack.breathPattern.holdIn }}' />
+	<input type='hidden' class='breathPatternExhale' value='{{ session.pack.breathPattern.exHale }}' />
+	<input type='hidden' class='breathPatternHoldEx' value='{{ session.pack.breathPattern.holdEx }}' />
+
+	<script>
+		window.breathDepthData = {{ breathDepthData }};
+	</script>
+
+	<section class="main-wrapper">
+		<div class="bg-particles"></div>
+		{{> profile-nav }}
+		<div class="container">
+			<div class="d-flex flex-column flex-md-row">
+				<a href='/stats' class='t-white'>
+					<span class='icon icon-arrow-left mr-2'></span>
+					Back to my stats overview
+				</a>
+				<h1 class='mx-auto mt-5 mt-md-0'>Session detail</h1>
+			</div>
+			<div class="d-flex mt-md-5 mt-3 flex-column flex-md-row pr-md-0 pr-2">
+				<div id='handlebars-stats'></div>
+				<script id="stats-template" type="text/x-handlebars-template">
+					{{> stats-left-icon-box }}
+				</script>
+				<div class="mt-4 d-flex percentage-hold">
+					<div class="circlular-percentage -breath-consistency">
+						<svg viewBox="0 0 40 40" class="circular-chart orange">
+							<path class="circle-bg" d="M20 2.8
+										a 15.9155 15.9155 0 0 1 0 31.831
+										a 15.9155 15.9155 0 0 1 0 -31.831" />
+							<path class="circle" stroke-dasharray="{{ session.guideAccuracyAvg }}, 100" d="M20 2.8
+										a 15.9155 15.9155 0 0 1 0 31.831
+										a 15.9155 15.9155 0 0 1 0 -31.831" />
+							<text x="20" y="21" class="percentage">{{ session.guideAccuracyAvg }}%</text>
+						</svg>
+						<div>
+							<span class='icon icon-waves'></span>
+							<p>Guide accuracy</p>
+						</div>
+					</div>
+					<div class="circlular-percentage -breath-depth">
+						<svg viewBox="0 0 40 40" class="circular-chart orange">
+							<path class="circle-bg" d="M20 2.8
+										a 15.9155 15.9155 0 0 1 0 31.831
+										a 15.9155 15.9155 0 0 1 0 -31.831" />
+							<path class="circle" stroke-dasharray="{{ session.topOfBreathAvg }}, 100" d="M20 2.8
+										a 15.9155 15.9155 0 0 1 0 31.831
+										a 15.9155 15.9155 0 0 1 0 -31.831" />
+							<text x="20" y="21" class="percentage">{{ session.topOfBreathAvg }}%</text>
+						</svg>
+						<div>
+							<span class='icon icon-resize'></span>
+							<p>Breath Depth</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="d-flex grid-wrapper">
+				<div class="stats-content small-container">
+					<div class="grid-item">
+						<div class="white-box">
+							<div class="top">
+								<img src='/assets/images/stats-icon.png' class='icon-left' />
+								<div class="titles">
+									<h3>Your breath over time</h3>
+									<p>
+										Look for consistency in the curve of your breath. The more consistent and symmetrical, the better!
+									</p>
+								</div>
+							</div>
+							{{> chart }}
+						</div><!-- white box -->
+						<div class="white-box mt-5">
+							<div class="top">
+								<img src='/assets/images/breath.png' class='icon-left' />
+								<div class="titles">
+									<h3>Breathing rate</h3>
+									<p>
+										See how many breaths per minute you took on average,
+										and what this guides rate is set at to evaluate see
+										how well you followed along.
+									</p>
+								</div>
+							</div>
+							<div class="left-icon-box mt-4">
+								<div class="left-icon bg-green" id='breathing-rate-icon'>
+									<span class='icon-tick t-white'></span>
+								</div>
+								<div class="columns">
+
+									<div class="full-column w-100 my-4">
+										{{> progress-bar session }}
+									</div><!-- full column -->
+								</div> <!-- columns -->
+							</div> <!-- left icon box -->
+						</div> <!-- white box -->
+
+						<div class="white-box white-box-overflow">
+							<div class="top flex-column flex-md-row">
+								<div class="titles">
+									<h5>Start another session for anxiety?</h5>
+									<p>Improve on your stats here by starting a new session</p>
+								</div>
+								<a 
+									href='/session?pack={{session.pack.name}}' 
+									class='start-session button button-md d-none d-md-block'
+								>
+									Start session
+								</a>
+							</div>
+							{{#if session.pack }}
+								{{> pack-item session.pack }}
+							{{/if}}
+						</div>
+					</div><!-- grid item -->
+				</div><!-- small container -->
+				{{> sidebar }}
+			</div><!-- grid wrapper-->
+		</div>
+	</section>
+
+	<script src='/assets/js/session-stats.js'></script>
+
+</body>

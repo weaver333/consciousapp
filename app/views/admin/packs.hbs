@@ -1,0 +1,56 @@
+{{> header }}
+<body>
+    
+	{{> admin-nav dashboard-nav=true }}
+	
+    <section class="main-wrapper">
+		<div class="bg-particles"> 
+            	<div class="d-flex grid-wrapper mb-md-5 mb-3">
+				<div class="stats-content small-container pt-4 pt-md-5">
+					<div class="grid-item">
+						<div class="white-box p-md-5">
+							<div class="top">
+								<h2 class='h1 mb-3'>All Packs</h2>
+                                <a href="pack" class="button ml-auto">New pack</a>
+							</div>
+							<div class="long-text">			
+                                {{#each packs}}
+                                    <div class="left-icon-box mt-3">
+                                        <div class="left-icon" style="background: linear-gradient(0, {{this.backgroundGradientTopColor}} 0%, {{this.backgroundGradientBottomColor}} 100%)">
+                                            <span class='icon-border'><img width="50" src="{{this.icon}}" /></span>
+                                        </div>
+                                        <div class="columns pl-2">
+                                            <div class="first-column d-flex align-items-center">
+                                               <div class='flex-1'>
+                                                   <img src='{{this.imageUrl}}' class='w-100 pr-2' />
+                                               </div>
+                                               <div>
+                                                <p class='session-type'>{{this.name}}</p>
+                                                    <p class='session-timestamp'>
+                                                        <span class="t-primary">{{this.description}}</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class='d-flex align-items-center'>
+                                                <div class='second-column'>
+                                                    
+                                                </div>
+                                                <div class="third-column">
+                                                    <div class="stats-percentage">{{this.breathPattern.inHale}} inhale<br>{{this.breathPattern.holdIn}} holdIn<br>{{this.breathPattern.exHale}} exhale<br>{{this.breathPattern.holdEx}} holdEx</div>
+                                                </div>
+                                            </div>
+                                            <div class="see-more">
+                                                <a href="pack/{{ this.name }}">Edit pack</a>
+                                                <span class='icon-arrow-right'></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+</html>

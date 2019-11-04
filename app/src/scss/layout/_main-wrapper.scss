@@ -1,0 +1,58 @@
+.main-wrapper {
+	padding-left: 100px;
+	width: 100%;
+	
+
+	@include media-breakpoint-down(md) {
+		padding-left: 0;
+		padding-bottom: 100px;
+	}
+}
+
+body.modal-active {
+	.main-wrapper {
+		position: relative;
+		z-index: 50;
+	}
+}
+
+.container {
+	padding-left: 50px;
+	padding-top: 45px;
+	width: 100%;
+	max-width: 1230px;
+	@include media-breakpoint-down(md) {
+		padding-left: 15px;
+	}
+}
+.dashboard,
+.stats {
+	.container {
+		position: relative;
+		z-index: 3;
+		color: white;
+	}
+}
+
+.small-container {
+	width: 100%;
+	max-width: 875px;
+}
+
+.grid-wrapper {
+
+	@include media-breakpoint-down(md) {
+		margin: 0;
+		flex-direction: column;
+	}
+	.grid-item {
+		padding-left: 15px;
+		padding-right: 15px;
+		@include media-breakpoint-down(md) {
+			padding-left: 0;
+		}
+	}
+	.sidebar .grid-item {
+		padding-left: 0;
+	}
+}

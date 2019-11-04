@@ -1,0 +1,130 @@
+.pulse-dot {
+	width: 5px;
+	height: 5px;
+	display: block;
+	position: relative;
+	border-radius: 50%;
+	animation: .8s ease-in 0s infinite alternate pulseDot;
+	margin-right: 22px;	
+	margin-left: 10px;
+	.pulse {
+		display: block;
+		position: absolute;
+		border-radius: 50%;
+		animation: .8s ease-in 0s infinite alternate pulse;
+	}
+	.pulse-1 {
+		width: 9px;
+		height: 9px;
+		left: 50%;
+		top: 50%;
+		left: -2px;
+		top: -2px;
+		animation-delay: .3s;
+	}
+	.pulse-2 {
+		width: 17px;
+		height: 17px;
+		left: 50%;
+		top: 50%;
+		left: -6px;
+		top: -6px;  
+		animation-delay: .6s;
+	}
+	.pulse-3 {
+		width: 25px;
+		height: 25px;
+		left: 50%;
+		top: 50%;
+		left: -10px;
+		top: -10px;  
+		animation-delay: .9s;
+	}
+}
+
+.dot-orange {
+	animation: .8s ease-in 0s infinite alternate pulseDotOrange;
+	.pulse { 
+		animation: .8s ease-in 0s infinite alternate pulseOrange;
+	}
+	.pulse-1 {
+		animation-delay: .3s;
+	}
+	.pulse-2 {
+		animation-delay: .6s;
+	}
+	.pulse-3 {
+		animation-delay: .9s;
+	}
+}
+
+.dot-green {
+	animation: .8s ease-in 0s infinite alternate pulseDotGreen;
+	.pulse { 
+		animation: .8s ease-in 0s infinite alternate pulseGreen;
+	}
+	.pulse-1 {
+		animation-delay: .3s;
+	}
+	.pulse-2 {
+		animation-delay: .6s;
+	}
+	.pulse-3 {
+		animation-delay: .9s;
+	}
+}
+
+@keyframes pulseDot {
+	from {
+		background: rgba(51,255,255,0.1);
+	}
+	to {
+		background: rgba(51,255,255,1);
+	}
+}
+
+@keyframes pulse {
+	from {
+		box-shadow: 0px 0px 0px 1px rgba(51, 255, 255, 0.03);
+	}
+	to {
+		box-shadow: 0px 0px 0px 1px rgba(51, 255, 255, 0.5);
+	}
+}
+
+
+@keyframes pulseDotOrange {
+	from {
+		background: rgba(250, 153, 23,.1);
+	}
+	to {
+		background: rgba(250, 153, 23, 1);
+	}
+}
+
+@keyframes pulseOrange {
+	from {
+		box-shadow: 0px 0px 0px 1px rgba(250, 153, 23, 0.03);
+	}
+	to {
+		box-shadow: 0px 0px 0px 1px rgba(250, 153, 23, 0.5);
+	}
+}
+
+@keyframes pulseDotGreen {
+	from {
+		background: rgba(18, 228, 63, 0.1);
+	}
+	to {
+		background: rgb(18, 228, 63);
+	}
+}
+
+@keyframes pulseGreen {
+	from {
+		box-shadow: 0px 0px 0px 1px rgba(18, 228, 63, 0.03);
+	}
+	to {
+		box-shadow: 0px 0px 0px 1px rgba(18, 228, 63, 0.5);
+	}
+}

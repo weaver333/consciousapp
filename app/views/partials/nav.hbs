@@ -1,0 +1,40 @@
+<nav class="nav-main {{#if nav-dark}}nav-dark{{/if}}">
+	<div class='nav-logo'>
+		<a href='/'><img src='/assets/images/nav-logo.png' /></a>
+	</div>
+
+	<ul class="nav-menu">
+		<li class="nav-menu-item {{#if dashboard-nav}}active{{/if}}">
+			<a href="/dashboard">
+				<span class="icon-home"></span>
+			</a>
+		</li>
+		<li class="nav-menu-item {{#if stats-nav}}active{{/if}}">
+			<a href="/stats">
+				<span class="icon-graph"></span>
+			</a>
+		</li>
+		<li class="nav-menu-item {{#if user-nav}}active{{/if}}">
+			<a href="/user">
+				<span class="icon-user-1"></span>
+			</a>
+		</li>
+		{{#if dashboard-nav}}
+		<li class="nav-menu-item">
+			<div id="mute-btn" class='nav-text-btn flex-column'>
+				<span class="icon icon-volume"></span> Mute
+			</div>
+		</li>
+		{{/if}}
+		{{!-- <li class="nav-menu-item">
+			<div id='theme-toggler' class='nav-text-btn flex-column'>
+				{{> icons/icon-theme }} <div class='theme-toggler-text'>Dark</div>
+			</div>
+		</li> --}}
+		{{!-- <li class="nav-menu-item {{#if bug-report-nav}}active{{/if}}">
+			<a href="/bug-report">
+				<span class="icon-bug"></span>
+			</a>
+		</li> --}}
+	</ul>
+</nav>

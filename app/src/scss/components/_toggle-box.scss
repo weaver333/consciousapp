@@ -1,0 +1,49 @@
+//HOW THIS WORKS:
+//The 0fr column takes up no space (yet).
+//The two 1fr columns are the toggle nub(??), and the ~visible~ empty space.
+//When checked, the left column becomes 1fr and the right column becomes 0fr, creating the effect of the nub moving.
+
+//====================
+
+//Change width or padding values freely :)
+//But for the 'nub' to look perfectly circular (at 1fr, i.e. 50%), the toggle's height must be half its width, plus the padding value
+$width: 50px;
+$padding: 4px;
+$height: $width / 2 + $padding;
+
+//toggle code begins!
+.switch-wrap {
+  cursor: pointer;
+  background: #15273b;
+  padding: $padding;
+  width: $width;
+  height: $height;
+  border-radius: $height / 2;
+  margin: auto 0;
+
+  input {
+		position: absolute;
+		opacity: 0;
+		width: 0;
+		height: 0;
+  }
+}
+.switch {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0fr 1fr 1fr;
+  transition: .2s;
+  //ICYMI, pseudo elements are treated as grid items
+  &::after {
+    content: '';
+    border-radius: 50%;
+    background: #ccc;
+    grid-column: 2;
+    transition: background .2s;
+  }
+}
+input:checked {
+  + .switch {
+    grid-template-columns: 1fr 1fr 0fr; 
+  }
+}

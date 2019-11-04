@@ -1,0 +1,70 @@
+.progress-bar {
+	width: 100%;
+	background-color: $t-black;
+	border-radius: 5px;
+	position: relative;
+
+	.inner {
+		background: white;
+		position: absolute;
+		right: -10px;
+		top: 20px;
+		width: 100px;
+		padding: 15px;
+		border-radius: 10px;
+		box-shadow: 1px 3px 7px rgba(0, 0, 0, .2);
+		text-align: center;
+		span {
+			font-weight: 400;
+		}
+	}
+
+	.line {
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		&:after {
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 20px;
+			width: 4px;
+			background: $green;
+		}
+		&.inner-top {
+			.inner {
+				top: 0px;
+				transform: translateY(-100%);
+			}
+		}
+	}
+
+	.guide-line {
+		position: absolute;
+	}
+
+	.bar {
+		max-width: 100%;
+		padding: 5px 0;
+		width: 0;
+		background: red;
+		border-radius: 5px;
+		@include gradient($primary, $primary-light, 90deg);
+		position: relative;
+		transition: width 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+		.inner {
+			right: -45px;
+		}
+	}
+}
+
+body.dark-theme {
+	.progress-bar {
+		.inner {
+			background: $primary;
+			border: 1px solid $primary-light;
+		}
+	}
+}

@@ -1,0 +1,49 @@
+.bg-light-blue {
+	background: $bg-light-blue;
+}
+
+.bg-map,
+.bg-particles {
+	min-height: 540px;
+	position: absolute;
+	top: 0;
+	background-size: cover;
+	border-bottom-left-radius: 20px;
+	left: 86px;
+	width: calc(100% - 86px);
+
+	@include media-breakpoint-down(md) {
+		width: 100%;
+		left: 0;
+		background-position: 50%;
+	}
+}
+
+.session.bg-particles {
+	position: relative;
+	left: 0;
+}
+
+.bg-map {
+	background-image: url(../images/bg-map.jpg);
+}
+
+.bg-particles {
+	background: repeat center/400px url("../images/pattern@2x.png"), linear-gradient(0deg, rgba(61, 1, 159, 1) 0%, rgba(9, 4, 23, 1) 100%);
+}
+
+.bg-green {
+	background: $green;
+}
+
+.bg-black {
+	background: $bg-black;
+}
+
+.bg-primary-dark {
+	background: $bg-primary-dark;
+}
+
+.bg-yellow {
+	background: $bg-yellow;
+}

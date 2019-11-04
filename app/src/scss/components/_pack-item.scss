@@ -1,0 +1,90 @@
+.pack-items {
+	display: flex;
+	@include media-breakpoint-down(sm) {
+		overflow: hidden;
+		overflow-x: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+}
+.pack-item {
+	width: 146px;
+	height: 226px;
+	background-color: white;
+	background-position: 50%;
+	color: white;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	margin-bottom: 20px;
+	transform: perspective(1.5em) rotateX(0deg);
+	border-radius: 15px;
+	padding: 20px 18px 20px 18px;
+	margin: 30px 0 0 18px;
+	display: flex;
+	flex-direction: column;
+	@include media-breakpoint-down(sm) {
+		min-width: 130px;
+		max-width: 130px;
+	}
+	.button-ghost {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		padding: 5px 0;
+		font-size: 12px;
+		.icon {
+			color: $primary-light;
+		}
+	}
+	
+	.pack-unlock-button {
+		position: absolute;
+		padding: 0 15px;
+		width: 100%;
+		left: 0;
+		top: 50%;
+		margin-top: -13px;
+	}
+
+	&:nth-child(1) {
+		margin-left: 0;
+	}
+
+	.pack-description {
+		margin-bottom: auto;
+	}
+
+	p {
+		color: white;
+		font-size: 13px;
+	}
+
+	.overlay {
+		border-radius: 15px;
+		opacity: .8;
+	}
+
+	.box-footer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		align-self: flex-end;
+
+
+		p {
+			font-size: 14px;
+			font-weight: 400;
+		}
+		
+	}
+
+  &:hover {
+		box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+		transform: perspective(1em) rotateX(.18deg);
+  }
+}

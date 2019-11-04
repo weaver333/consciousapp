@@ -1,0 +1,36 @@
+{{> header }}
+<body>
+    
+	{{> admin-nav dashboard-nav=true }}
+	
+    <section class="main-wrapper">
+		<div class="bg-particles"> 
+            	<div class="d-flex grid-wrapper mb-md-5 mb-3">
+				<div class="stats-content small-container pt-4 pt-md-5">
+					<div class="grid-item">
+						<div class="white-box p-md-5">
+							<div class="top">
+								<h2 class='h1 mb-3'>All Users</h2>
+							</div>
+							<div class="long-text">
+                                <table>
+                                {{#each users}}
+                                    <tr>
+                                        <td>{{this.email}}</td>
+                                        <td>{{this.fullname}}</td>
+                                        <td>{{this.emailConfirmed}}</td>
+                                        <td>{{this.lastSentLocation}}</td>
+                                        <td>{{this.lastActivity}}</td>
+                                        <td>{{this.dayStreak}}</td>
+                                        <td>{{this.coins}}</td>
+                                    </tr>
+                                {{/each}}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+</html>

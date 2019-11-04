@@ -1,0 +1,17 @@
+.stats-content {
+	padding-top: 120px;
+	width: 100%;
+
+	@include media-breakpoint-down(sm) {
+		padding-top: 60px;
+	}
+
+	&.sidebar {
+		max-width: 330px;
+		@include media-breakpoint-down(md) {
+			max-width: none;
+			width: 100%;
+		}
+	}
+	
+}

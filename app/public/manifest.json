@@ -1,0 +1,21 @@
+{
+    "name": "Conscious",
+    "short_name": "Conscious",
+    "icons": [
+        {
+            "src": "/assets/images/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#0D021E",
+    "background_color": "#0D021E",
+    "display": "standalone",
+    "prefer_related_applications": false,
+    "start_url": "/dashboard"
+}

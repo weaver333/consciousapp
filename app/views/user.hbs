@@ -1,0 +1,161 @@
+{{> header }}
+<body class='stats'>
+	{{> nav user-nav=true }}
+	{{> profile-nav }}	
+
+	<section class="main-wrapper">
+		<div class="bg-particles"></div>
+		<div class="container">
+			<div class="d-flex align-items-center m-0">
+				<h1>
+					Edit profile
+				</h1>
+			</div>
+			
+			<div class="d-flex grid-wrapper mb-md-5 mb-3">
+				<div class="stats-content small-container pt-4 pt-md-5">
+					<div class="grid-item">
+						<div class="white-box p-md-5 mb-5">
+							<div class="top">
+								<h2 class='h1 mb-3'>Your subscription status:</h2>
+							</div>
+							<p>
+								Your current plan is 
+								<span class='bold uc t-main'>{{user.stripe.plan}}</span>.
+							</p>
+							<p class='subscription-text' data-plan='{{user.stripe.plan}}'></p>
+						</div>
+						<div class="white-box p-md-5">
+							<div class="top">
+								<h2 class='h1 mb-3'>Edit your profile</h2>
+							</div>
+							<div class="long-text">
+								<form action='#' method='post' id='change-profile'> 
+									<div class='form-group'>
+										<label for='email' class='form-label'>Email</label>
+										<div class='input-group mb-2 icon'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+											<input 
+												type='email' 
+												class='form-control' 
+												id='email'
+												name='email' 
+												placeholder='Enter your email address'
+												value='{{ user.email }}'
+												disabled
+											/>
+										</div>
+									</div>
+									<div class='form-group'>
+										<label for='fullname' class='form-label'>Full name</label>
+										<div class='input-group mb-2 icon'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-user'></span>
+												</div>
+											</div>
+											<input 
+												type='text' 
+												class='form-control' 
+												id='fullname'
+												name='fullname' 
+												placeholder='Change your full name'
+												value='{{ user.fullname }}'
+											/>
+										</div>
+									</div>
+									<div class='form-group d-none'>
+										<div class='d-flex'>
+											<label for='current_password' class='form-label'>Current password</label>
+										</div>
+										<div class='input-group mb-2 icon'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-padlock'></span>
+												</div>
+											</div>
+											<input 
+												type='password' 
+												class='form-control' 
+												id='current_password' 
+												name='current_password'
+												placeholder='Enter your current password'
+											/>
+										</div>
+									</div>
+									<div class='form-group'>
+										<div class='d-flex'>
+											<label for='password' class='form-label'>New password</label>
+										</div>
+										<div class='input-group mb-2 icon'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-padlock'></span>
+												</div>
+											</div>
+											<input 
+												type='password' 
+												class='form-control' 
+												id='password' 
+												name='password'
+												placeholder='Enter new password'
+											/>
+										</div>
+									</div>
+									<div class='form-group'>
+										<div class='d-flex'>
+											<label for='password_conf' class='form-label'>Confirm new password</label>
+										</div>
+										<div class='input-group mb-2 icon'>
+											<div class='input-group-prepend'>
+												<div class='input-group-text'>
+													<span class='icon-padlock'></span>
+												</div>
+											</div>
+											<input 
+												type='password' 
+												class='form-control' 
+												id='password_conf' 
+												name='passwordConf'
+												placeholder='Confirm your new password'
+											/>
+										</div>
+										<button type='submit' class='button'>Save changes</button>
+									</div>
+								</form>
+
+								<p class='d-block mt-5'>If you want to delete your account click <a href='#' class='modal-toggle'>here</a>.</p>
+								<div class='modal'>
+									<div class='inner'>
+										<p>Type 'delete' to confirm the account deletion</p>
+										<div class='input-group my-2'>
+											<input 
+												type='text' 
+												class='form-control' 
+												id='input-delete-account'
+												name='input-delete-account' 
+												placeholder='Type delete to delete the account'
+											/>
+										</div>
+										<div class='d-flex mt-4'>
+											<a href='#' class='button button-sm button-red' id='modal-delete-account' disabled>Delete</a>
+											<a href='#' class='button button-sm ml-3 close-modal'>Cancel</a>
+										</div>
+									</div>
+								</div>
+								<div class='modal-backdrop'></div>
+								<script src='/assets/js/user.js'></script>
+							</div>
+						</div><!-- white box -->
+					</div><!-- grid item -->
+				</div><!-- small container -->
+			</div><!-- grid wrapper-->
+		</div>
+	</section>
+</body>
+
+{{> footer }}

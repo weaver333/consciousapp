@@ -1,0 +1,164 @@
+<body class='stats'>
+	{{> nav stats-nav=true}}
+
+	<section class="main-wrapper mb-md-5 mb-3">
+		<div class="bg-particles"></div>
+		{{> profile-nav }}
+		<div class="container">
+			{{!-- <div class="d-flex flex-column flex-md-row">
+				<div class="d-flex align-items-center">
+					<div class="pulse-dot">
+						<div class="pulse pulse-1"></div>
+						<div class="pulse pulse-2"></div>
+						<div class="pulse pulse-3"></div>
+					</div>
+					<p>25,345 meditating today</p>
+				</div>
+				<h1 class='mx-auto mt-5 mt-md-0'>My stats</h1>
+			</div> --}}
+			{{!-- <div class="d-flex mt-1 mt-md-5 flex-column flex-md-row">
+				<div class="mt-4 d-flex percentage-hold">
+					<div class="circlular-percentage -breath-consistency">
+						<svg viewBox="0 0 40 40" class="circular-chart orange">
+							<path class="circle-bg" d="M20 2.8
+										a 15.9155 15.9155 0 0 1 0 31.831
+										a 15.9155 15.9155 0 0 1 0 -31.831" />
+							<path class="circle" stroke-dasharray="55, 100" d="M20 2.8
+										a 15.9155 15.9155 0 0 1 0 31.831
+										a 15.9155 15.9155 0 0 1 0 -31.831" />
+							<text x="20" y="21" class="percentage">55%</text>
+						</svg>
+						<div>
+							<span class='icon icon-waves'></span>
+							<p>Guide accuracy</p>
+						</div>
+					</div>
+					<div class="circlular-percentage -breath-depth">
+						<svg viewBox="0 0 40 40" class="circular-chart orange">
+							<path class="circle-bg" d="M20 2.8
+										a 15.9155 15.9155 0 0 1 0 31.831
+										a 15.9155 15.9155 0 0 1 0 -31.831" />
+							<path class="circle" stroke-dasharray="29, 100" d="M20 2.8
+										a 15.9155 15.9155 0 0 1 0 31.831
+										a 15.9155 15.9155 0 0 1 0 -31.831" />
+							<text x="20" y="21" class="percentage">29%</text>
+						</svg>
+						<div>
+							<span class='icon icon-resize'></span>
+							<p>Breath Depth</p>
+						</div>
+					</div>
+				</div>
+				<div class="ml-auto boxes">
+					{{>
+						box
+						name="Average session time"
+						description="5 minutes"
+						icon="icon-clock"
+						iconColor="t-turquoise"
+					}}
+					{{>
+						box
+						name="Day streak"
+						description="3 days!"
+						icon="icon-fire"
+						iconColor="t-orange"
+					}}
+					{{>
+						box
+						name="Favorite pack"
+						description="Anxiety"
+						icon="icon-anxiety"
+						iconColor="t-primary-light"
+					}}
+				</div>
+			</div> --}}
+			<h1 class='ml-3'>My stats</h1>
+			<div class="d-flex grid-wrapper">
+				<div class="stats-content small-container pt-4">
+					<div class="grid-item">
+						{{!-- <div class="white-box">
+							<div class="top">
+								<img src='/assets/images/stats-icon.png' class='icon-left' />
+								<div class="titles">
+									<h3>Your stats over time</h3>
+									<p>
+										Choose a date range from the picker on the right to see your progress over time!
+									</p>
+								</div>
+							</div>
+							<div class="chart-wrapper mt-4">
+								<canvas id="chart" width="853" height="480"></canvas>
+							</div>
+						</div><!-- white box --> --}}
+						{{!-- <div class="white-box mt-5">
+							<div class="top">
+								<img src='/assets/images/achievements-icon.png' class='icon-left' />
+								<div class="titles">
+									<h3>Achievements</h3>
+									<p>
+										See your latest achievemnts gained from the sessions you did.
+									</p>
+								</div>
+							</div>
+							<div class="grey-boxes mt-4">
+								{{>
+									grey-box
+									topText="53"
+									bottomText="Longest ever session"
+								}}
+								{{>
+									grey-box
+									topText="3 days"
+									bottomText="Longest break"
+								}}
+								{{>
+									grey-box
+									topText="2400xp"
+									bottomText="Experience points"
+								}}
+								{{>
+									grey-box
+									topText="3d 2h"
+									bottomText="Total usage time"
+								}}
+								{{>
+									grey-box
+									topText="94%"
+									bottomText="Highest session accuracy"
+								}}
+							</div>
+						</div> --}}
+						{{!-- <div class="white-box mt-5"> --}}
+						<div class="white-box">
+							<div class="top">
+								<img src='assets/images/icon-back.png' class='icon-left' />
+								<div class="titles">
+									<h3>My previous sessions</h3>
+									<p>
+										See how you did in your previous sessions, with insightful
+										stats from the camera biofeedback!
+									</p>
+								</div>
+							</div>
+
+							<div class="left-icon-boxes mt-5">
+								{{#unless sessions}}
+									<p>No sessions yet!</p>
+								{{/unless}}
+								{{#each sessions}}
+									{{> sessions-left-icon-box }}
+								{{/each}}
+							</div>
+						</div><!-- white box -->
+					</div><!-- grid item -->
+				</div><!-- small container -->
+				{{!-- {{> sidebar }} --}}
+
+			</div><!-- grid wrapper-->
+		</div>
+	</section>
+
+	<script src='/assets/js/stats.js'></script>
+
+</body>

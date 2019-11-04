@@ -1,0 +1,57 @@
+<body class='auth'>
+	<div class="login-screen">
+		<img src="/assets/images/logo.png" alt="Conscious Logo" class='auth-logo'>
+
+		<div class="box-form">
+			<div class="inner">
+				<h3 class='mb-4 mb-md-5 text-center'>Sign in, and <span class='t-primary'>rejuvanate</span></h3>
+				<form action="#" method="post">
+					<div class='form-group'>
+						<label for='email' class='form-label'>Email</label>
+						<div class="input-group mb-2 icon">
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									<span class='icon-user'></span>
+								</div>
+							</div>
+							<input type="email" class="form-control" id="email" name='email'
+								placeholder="Enter your email address" />
+						</div>
+					</div>
+					<div class='form-group'>
+						<div class="d-flex">
+							<label for='password' class='form-label'>Password</label>
+							<a href='/forgot-password' class='forgot-password'>Forgot your password?</a>
+						</div>
+						<div class="input-group mb-2 icon">
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									<span class='icon-padlock'></span>
+								</div>
+							</div>
+							<input type="password" class="form-control" id="password" name='password'
+								placeholder="Enter your password" />
+						</div>
+						{{#if message}}
+							<p class='mt-3'>{{message}}</p>
+						{{/if}}
+						<button type='submit' class='button'>Sign in</button>
+					</div>
+				</form>
+			</div>
+			<div class="footer">
+				<p>New to Conscious?</p>
+				<a href="/sign-up" class='button button-sm'>Sign up</a>
+			</div>
+		</div>
+
+		<ul class='footer-menu'>
+			<li><a href='/terms'>Terms of service</a></li>
+			<li><a href='/privacy'>Privacy</a></li>
+			<li><a href='/cookies'>Cookies</a></li>
+		</ul>
+		<p class='copyright'>© 2019 Conscious - Transformational Technologies LLC.</p>
+	</div>
+
+	<script src='/assets/js/sign-in.js'></script>
+</body>
